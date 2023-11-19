@@ -93,8 +93,9 @@ function App() {
             />
             {isTimerStarting ? (
                 <div className="mt-4 text-xl">
-                    {Math.floor(decreasingValue / 60)} :{" "}
-                    {(decreasingValue % 60).toString().padStart(2, "0")}
+                    {/* {Math.floor(decreasingValue / 60)} :{" "}
+                    {(decreasingValue % 60).toString().padStart(2, "0")} */}
+                    {formatTime_func(decreasingValue)}
                 </div>
             ) : (
                 <p className="mt-4 text-xl">{formatTime_func(value)}</p>

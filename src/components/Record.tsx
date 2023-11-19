@@ -66,7 +66,7 @@ export const Record: React.FC<Props> = ({ value, setValue, isTimerStarting }) =>
                             step={10}
                             value={value}
                             onChange={handleChange}
-                            className="py-2 bg-bg-color"
+                            className="py-2 bg-bg-color h-9"
                         />
                         <div className="grid grid-cols-2 gap-2">
                             <button
