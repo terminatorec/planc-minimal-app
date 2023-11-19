@@ -17,7 +17,9 @@ export const Record: React.FC<Props> = ({ value, setValue, isTimerStarting }) =>
         setValue(newValue);
     };
 
-    const handlePress = (symbol: string) => {
+    const handlePress = (symbol: string, event: any) => {
+        event.stopPropagation();
+        event.preventDefault();
         if (symbol == "plus") {
             setValue((prevValue: any) => prevValue + 10);
             timerInterval.current = setInterval(() => {
@@ -70,11 +72,11 @@ export const Record: React.FC<Props> = ({ value, setValue, isTimerStarting }) =>
                         />
                         <div className="grid grid-cols-2 gap-2">
                             <button
-                                onMouseDown={() => handlePress("minus")}
+                                onMouseDown={(event) => handlePress("minus", event)}
                                 onMouseUp={handleRelease}
                                 onMouseLeave={handleRelease}
-                                // onTouchStart={() => handlePress("minus")}
-                                // onTouchEnd={handleRelease}
+                                onTouchStart={(event) => handlePress("minus", event)}
+                                onTouchEnd={handleRelease}
                                 type="button"
                                 className="text-bg-color bg-text-color hover:bg-text-color/80   font-medium rounded-lg text-sm px-5 py-2.5 mb-2 "
                             >
@@ -82,11 +84,11 @@ export const Record: React.FC<Props> = ({ value, setValue, isTimerStarting }) =>
                             </button>
 
                             <button
-                                onMouseDown={() => handlePress("plus")}
+                                onMouseDown={(event) => handlePress("plus", event)}
                                 onMouseUp={handleRelease}
                                 onMouseLeave={handleRelease}
-                                // onTouchStart={() => handlePress("plus")}
-                                // onTouchEnd={handleRelease}
+                                onTouchStart={(event) => handlePress("plus", event)}
+                                onTouchEnd={handleRelease}
                                 type="button"
                                 className="text-bg-color bg-text-color hover:bg-text-color/80   font-medium rounded-lg text-sm px-5 py-2.5 mb-2 "
                             >
