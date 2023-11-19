@@ -32,7 +32,7 @@ function App() {
         setIsTimerStarting(true);
         setPopupOpen(false);
         let oldValue = Number(value);
-        let vibrateTimes = [0];
+        let vibrateTimes = [];
         for (let i = 1; value > 0; i++) {
             console.log("old value is:", oldValue, "vibrate times is:", vibrateTimes);
             if (oldValue - 60 >= 0) {
@@ -52,7 +52,10 @@ function App() {
     }, [value]);
 
     React.useEffect(() => {
-        if (vibrateTimes.includes(decreasingValue)) {
+        if (decreasingValue == 0) {
+            window.navigator.vibrate(3000);
+            console.log("Final Vibrate!!!");
+        } else if (vibrateTimes.includes(decreasingValue)) {
             window.navigator.vibrate(500);
             console.log("Vibrate!!!");
         }
