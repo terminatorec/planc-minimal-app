@@ -73,8 +73,8 @@ export const Record: React.FC<Props> = ({ value, setValue, isTimerStarting }) =>
                                 onMouseDown={() => handlePress("minus")}
                                 onMouseUp={handleRelease}
                                 onMouseLeave={handleRelease}
-                                onTouchStart={() => handlePress("minus")}
-                                onTouchEnd={handleRelease}
+                                // onTouchStart={() => handlePress("minus")}
+                                // onTouchEnd={handleRelease}
                                 type="button"
                                 className="text-bg-color bg-text-color hover:bg-text-color/80   font-medium rounded-lg text-sm px-5 py-2.5 mb-2 "
                             >
@@ -85,8 +85,8 @@ export const Record: React.FC<Props> = ({ value, setValue, isTimerStarting }) =>
                                 onMouseDown={() => handlePress("plus")}
                                 onMouseUp={handleRelease}
                                 onMouseLeave={handleRelease}
-                                onTouchStart={() => handlePress("plus")}
-                                onTouchEnd={handleRelease}
+                                // onTouchStart={() => handlePress("plus")}
+                                // onTouchEnd={handleRelease}
                                 type="button"
                                 className="text-bg-color bg-text-color hover:bg-text-color/80   font-medium rounded-lg text-sm px-5 py-2.5 mb-2 "
                             >
