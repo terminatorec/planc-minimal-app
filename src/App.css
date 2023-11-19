@@ -37,19 +37,18 @@ input[type="range"] {
 }
 input[type="range"]::-webkit-slider-runnable-track {
     border-radius: 10px/100%;
-    height: 7px;
+    height: 5px;
     /* border: 1px solid rgb(247, 127, 0); */
-    background-color: #fff;
+    background-color: rgb(234, 226, 183);
 }
 input[type="range"]::-webkit-slider-thumb {
-    background: #ecf0f1;
-    border: 1px solid rgb(247, 127, 0);
+    background: rgb(247, 127, 0);
+    border: 2px solid rgb(252, 191, 73);
     border-radius: 10px/100%;
     cursor: pointer;
-    width: 150px;
-    height: 150px;
+    width: 30px;
+    height: 30px;
     -webkit-appearance: none;
-    margin-top: -4px;
 }
 
 input[type="range"]::-moz-range-track {
