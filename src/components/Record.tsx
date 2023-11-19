@@ -18,8 +18,9 @@ export const Record: React.FC<Props> = ({ value, setValue, isTimerStarting }) =>
     };
 
     const handlePress = (symbol: string, event: any) => {
-        event.stopPropagation();
-        event.preventDefault();
+        // event.stopPropagation();
+        // event.preventDefault();
+        if (typeof window.ontouchstart != "undefined" && event.type == "mousedown") return;
         if (symbol == "plus") {
             setValue((prevValue: any) => prevValue + 10);
             timerInterval.current = setInterval(() => {
